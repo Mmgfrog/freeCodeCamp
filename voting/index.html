@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>Pets Voting App</title>
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+		body {
+			font-family: 'Bree Serif', serif;
+		}
+
+		button {
+			align-content: center;
+			width: 49.5%;
+			color: #ffffff;
+			border-radius: 0px;
+			display: inline;
+			height: 300px;
+			width: 250px;
+			font-family: 'Bree Serif', serif;
+			font-size: 24px;
+			font-weight: bold;
+			padding: 20px;
+			margin: 20px 20px;
+		}
+
+		button#vote1 {
+			background-color: red;
+		}
+		button#vote2 {
+			background-color: blue; 
+		}
+
+		h1, p, section {
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Pets Voting App</h1>
+	<p>Please click a button to vote for your favorite pet.</p>
+	<section id="voting-container">
+		<button id="vote1" onClick="vote1Clicked();">Dogs</button>
+		<button id="vote2" onClick="vote2Clicked();">Cats</button>
+	</section>
+	<section>
+		<p>Dogs Count: <span id="vote1-count"></span></p>
+		<p>Cats Count: <span id="vote2-count"></span></p>
+	</section>
+	<script>
+		let vote1Count = 0;
+		let vote2Count = 0;
+		function updateCounts () {
+			let vote1CountElement = document.querySelector('#vote1-count');
+			let vote2CountElement = document.querySelector('#vote2-count');
+
+			vote1CountElement.innerHTML = vote1Count;
+			vote2CountElement.innerHTML = vote2Count;
+		}
+
+		function vote1Clicked () {
+			vote1Count++;
+			updateCounts();
+		}
+
+		function vote2Clicked () {
+			vote2Count++;
+			updateCounts();
+		}
+
+		updateCounts();
+	</script>
+</body>
+</html>
